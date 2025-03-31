@@ -15,10 +15,10 @@ class App extends Component {
 
   handleLuckButton() {
     const randomIndex = Math.floor(Math.random() * LUCK_PHRASES.length);
-    this.setState({cookieImage: require('./src/biscoitoAberto.png'),
-      luckText: LUCK_PHRASES[randomIndex],
+    this.setState({
+      cookieImage: require('./src/biscoitoAberto.png'),
+      luckText: `"${LUCK_PHRASES[randomIndex]}"`,
     });
-
   }
   render() {
     return (
@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 20,
   },
-  luckText:{
+  luckText: {
     marginTop: 20,
-    padding:10,
+    padding: 10,
     textAling: 'center',
-
-  }
+    fontStyle: 'italic',
+  },
 });
 
 export default App;
